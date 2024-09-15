@@ -23,12 +23,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    {{-- Euphoria Script Display Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap");
 
 
         .font-playfair {
@@ -45,6 +50,10 @@
 
         .font-roboto {
             font-family: "Roboto", sans-serif;
+        }
+
+        .font-euphoria {
+            font-family: "Euphoria Script", cursive;
         }
 
         .bg-catering {
@@ -99,7 +108,7 @@
         </div>
     </nav>
 
-    <main class="h-screen bg-catering font-poppins flex items-center  ">
+    <main class="h-screen bg-catering font-poppins flex items-center">
         <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
         <div class="relative text-white z-10 flex flex-col items-start pl-4">
             <h2 class="text-xl">Selamat Datang Di</h2>
@@ -107,6 +116,16 @@
             <p class="text-md">Menyediakan kebutuhan catering sejak 2010</p>
         </div>
     </main>
+
+    <section class="bg-white font-poppins">
+        <div class="px-10 py-8 text-center space-y-2">
+            <p class="text-xl font-semibold uppercase">"kualitas menu terbaik dan <br>dengan harga yang
+                terjangkau."</p>
+            <h2 class="text-sm text-yellow-400 font-semibold uppercase">- Owner Kami Alan Zagi -</h2>
+            <h1 class="text-4xl font-euphoria">Alan Zagi</h1>
+        </div>
+    </section>
+
     {{-- Flowbite Javascript --}}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
