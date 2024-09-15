@@ -46,19 +46,25 @@
         .font-roboto {
             font-family: "Roboto", sans-serif;
         }
+
+        .bg-catering {
+            background-image: url('{{ asset('images/cateringbackground.jpg') }}');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="absolute top-0 left-0 w-full bg-transparent z-50 font-poppins ">
+    <nav class="absolute top-0 left-0 w-full bg-black/50 z-50 font-poppins">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="https://instagram.com/alanzagi" class="flex items-center space-x-3 rtl:space-x-reverse"
                 target="_blank">
-                <span class="self-center text-2xl font-medium whitespace-nowrap text-cyan-400">M_Catering</span>
+                <span class="self-center text-2xl font-medium whitespace-nowrap text-yellow-400">M_Catering</span>
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button data-collapse-toggle="navbar-cta" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-cyan-400 rounded-lg md:hidden hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-600"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-yellow-400 rounded-lg md:hidden hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-600"
                     aria-controls="navbar-cta" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -73,27 +79,33 @@
                     class="flex flex-col text-xl font-medium p-4 md:p-0 mt-4 border border-gray-200 rounded-lg bg-slate-200 text-gray-900 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent md:text-white">
                     <li>
                         <a href="/"
-                            class="block py-2 px-3 md:p-2 text-white rounded bg-cyan-500 hover:text-white hover:bg-cyan-500 md:hover:bg-transparent md:hover:text-cyan-500 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent md:text-cyan-500"
+                            class="block py-2 px-3 md:p-2 text-white rounded bg-yellow-400 hover:text-white hover:bg-yellow-400 md:hover:bg-transparent md:hover:text-yellow-400 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent md:text-yellow-400"
                             aria-current="page">Beranda</a>
                     </li>
                     <li>
                         <a href="/layanan"
-                            class="block py-2 px-3 md:p-2 rounded hover:text-white hover:bg-cyan-500 md:hover:bg-transparent md:hover:text-cyan-500 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent">Layanan</a>
+                            class="block py-2 px-3 md:p-2 rounded hover:text-white hover:bg-yellow-400 md:hover:bg-transparent md:hover:text-yellow-400 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent">Layanan</a>
                     </li>
                     <li>
                         <a href="/pemesanan"
-                            class="block py-2 px-3 md:p-2 rounded hover:text-white hover:bg-cyan-500 md:hover:bg-transparent md:hover:text-cyan-500 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent">Pemesanan</a>
+                            class="block py-2 px-3 md:p-2 rounded hover:text-white hover:bg-yellow-400 md:hover:bg-transparent md:hover:text-yellow-400 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent">Pemesanan</a>
                     </li>
                     <li>
                         <a href="/kontak"
-                            class="block py-2 px-3 md:p-2 rounded hover:text-white hover:bg-cyan-500 md:hover:bg-transparent md:hover:text-cyan-500 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent">Kontak</a>
+                            class="block py-2 px-3 md:p-2 rounded hover:text-white hover:bg-yellow-400 md:hover:bg-transparent md:hover:text-yellow-400 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent">Kontak</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="h-screen bg-[url('images/backgroundcatering.jpg')]">
+    <main class="h-screen bg-catering font-poppins flex items-center  ">
+        <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+        <div class="relative text-white z-10 flex flex-col items-start pl-4">
+            <h2 class="text-xl">Selamat Datang Di</h2>
+            <h1 class="text-3xl font-semibold text-yellow-400">Makmur Catering</h1>
+            <p class="text-md">Menyediakan kebutuhan catering sejak 2010</p>
+        </div>
     </main>
     {{-- Flowbite Javascript --}}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
