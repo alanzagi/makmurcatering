@@ -4,10 +4,10 @@
             <div>
                 <div class="text-yellow-400 font-cabin flex items-center gap-x-4">
                     <img src="images/alanxcode.png" alt="" class="h-20 rounded-full" />
-                    <h1 class="font-semibold text-3xl">Daris Travel</h1>
+                    <h1 class="font-semibold text-3xl">Makmur Catering</h1>
                 </div>
-                <p class="mt-4 max-w-xs text-white">Jasa travel terpercaya untuk petualangan wisata yang tak
-                    terlupakan.</p>
+                <p class="mt-4 max-w-xs text-white">Hidangan berkualitas tinggi dengan pelayanan profesional, terpercaya
+                    untuk acara Anda.</p>
 
                 <ul class="mt-8 flex gap-6">
                     <li>
