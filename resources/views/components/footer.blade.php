@@ -2,11 +2,12 @@
     <div class="mx-auto max-w-screen-xl space-y-8 px-4 pt-16 pb-7 sm:px-6 lg:space-y-16 lg:px-8">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4">
             <div>
-                <div class="text-yellow-400 font-cabin flex items-center gap-x-4">
+                <div class="text-yellow-400 font-poppins flex items-center gap-x-4">
                     <img src="images/alanxcode.png" alt="" class="h-20 rounded-full" />
                     <h1 class="font-semibold text-3xl">Makmur Catering</h1>
                 </div>
-                <p class="mt-4 max-w-xs text-white">Hidangan berkualitas tinggi dengan pelayanan profesional, terpercaya
+                <p class="mt-4 max-w-xs text-slate-100">Hidangan berkualitas tinggi dengan pelayanan profesional,
+                    terpercaya
                     untuk acara Anda.</p>
 
                 <ul class="mt-8 flex gap-6">
@@ -78,30 +79,30 @@
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-4">
                 <div>
-                    <p class="font-medium text-white text-2xl font-playfair">Halaman</p>
+                    <p class="font-medium text-slate-100 text-2xl font-playfair">Halaman</p>
 
-                    <ul class="mt-4 space-y-1 text-md">
+                    <ul class="mt-4 space-y-1 text-md font-poppins">
                         <li>
                             <a href="{{ route('index') }}"
-                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'index' ? 'text-yellow-400' : 'text-white' }}">
+                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'index' ? 'text-yellow-400' : 'text-slate-100' }}">
                                 Beranda
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('layanan') }}"
-                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'layanan' ? 'text-yellow-400' : 'text-white' }}">
+                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'layanan' ? 'text-yellow-400' : 'text-slate-100' }}">
                                 Layanan
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('pemesanan') }}"
-                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'pemesanan' ? 'text-yellow-400' : 'text-white' }}">
+                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'pemesanan' ? 'text-yellow-400' : 'text-slate-100' }}">
                                 Pemesanan
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('kontak') }}"
-                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'kontak' ? 'text-yellow-400' : 'text-white' }}">
+                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'kontak' ? 'text-yellow-400' : 'text-slate-100' }}">
                                 Kontak
                             </a>
                         </li>
@@ -111,19 +112,19 @@
                 </div>
 
                 <div>
-                    <p class="font-medium text-white text-2xl font-playfair">Kontak</p>
+                    <p class="font-medium text-slate-100 text-2xl font-playfair">Kontak</p>
 
-                    <ul class="mt-6 space-y-4 text-md">
+                    <ul class="mt-6 space-y-4 text-md font-poppins">
                         <li class="flex items-center gap-x-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="h-6 lg:h-12">
+                                stroke-width="1.5" stroke="currentColor" class="h-6 lg:h-16">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="text-yellow-400" />
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                                     class="text-yellow-400" />
                             </svg>
-                            <a href="#" target="_blank" class="text-white transition hover:opacity-75">
+                            <a href="#" target="_blank" class="text-slate-100 transition hover:opacity-75">
                                 Jl. Kridasana No.132 Kelurahan Pasiran, Singkawang Barat </a>
                         </li>
 
@@ -136,7 +137,7 @@
                             </svg>
 
                             <a href="https://wa.me/6281521550913" target="_blank"
-                                class="text-white transition hover:opacity-75"> 0815-2155-0913 </a>
+                                class="text-slate-100 transition hover:opacity-75"> 0815-2155-0913 </a>
                         </li>
                     </ul>
                 </div>
@@ -148,7 +149,7 @@
                             <h2 class="text-2xl font-medium text-gray-900 font-playfair">Dapatkan Informasi
                                 Terbaru!</h2>
 
-                            <p class="mt-2 text-gray-500 font-cabin pr-8">Masukkan email anda di bawah untuk
+                            <p class="mt-2 text-gray-500 font-poppins pr-8">Masukkan email anda di bawah untuk
                                 berlangganan informasi dan promosi terbaru seputar Makmur Catering.</p>
                         </div>
                         <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
@@ -161,7 +162,7 @@
                                         class="w-full p-3 border-none rounded-md focus:border-transparent focus:ring-yellow-400 sm:text-sm"
                                         required />
                                     <button type="submit" id="submit"
-                                        class="mt-3 flex items-center justify-center w-full bg-yellow-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none rounded-md hover:bg-yellow-600 sm:mt-0 sm:w-auto sm:shrink-0">
+                                        class="mt-3 flex items-center justify-center w-full bg-yellow-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-slate-100 transition-none rounded-md hover:bg-yellow-600 sm:mt-0 sm:w-auto sm:shrink-0">
                                         Kirim
                                     </button>
                                 </div>
@@ -185,6 +186,6 @@
             </div>
         </div>
 
-        <p class="text-sm text-white font-cabin">&copy; 2024. Makmur Catering. All rights reserved.</p>
+        <p class="text-sm text-slate-100 font-poppins">&copy; 2024. Makmur Catering. All rights reserved.</p>
     </div>
 </footer>
