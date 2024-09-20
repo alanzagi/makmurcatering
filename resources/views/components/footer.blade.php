@@ -83,8 +83,8 @@
 
                     <ul class="mt-4 space-y-1 text-md font-poppins">
                         <li>
-                            <a href="{{ route('index') }}"
-                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'index' ? 'text-yellow-400' : 'text-slate-100' }}">
+                            <a href="{{ route('beranda') }}"
+                                class="block py-2 px-3 transition hover:text-yellow-400 {{ $activePage === 'beranda' ? 'text-yellow-400' : 'text-slate-100' }}">
                                 Beranda
                             </a>
                         </li>

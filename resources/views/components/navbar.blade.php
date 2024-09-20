@@ -19,8 +19,8 @@
             <ul
                 class="flex flex-col text-xl font-medium p-4 md:p-0 mt-4 border border-gray-200 rounded-lg bg-slate-200 text-gray-900 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent md:text-slate-100">
                 <li>
-                    <a href="{{ route('index') }}"
-                        class="block py-2 px-3 md:p-2 rounded {{ $activePage === 'index' ? 'bg-yellow-400 text-slate-100' : 'hover:text-slate-100 hover:bg-yellow-400' }} md:hover:bg-transparent md:hover:text-yellow-400 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent {{ $activePage === 'index' ? 'md:text-yellow-400' : 'md:text-slate-100' }}">
+                    <a href="{{ route('beranda') }}"
+                        class="block py-2 px-3 md:p-2 rounded {{ $activePage === 'index' ? 'bg-yellow-400 text-slate-100' : 'hover:text-slate-100 hover:bg-yellow-400' }} md:hover:bg-transparent md:hover:text-yellow-400 md:transition-colors md:duration-500 md:ease-in-out md:text-lg md:bg-transparent {{ $activePage === 'beranda' ? 'md:text-yellow-400' : 'md:text-slate-100' }}">
                         Beranda
                     </a>
                 </li>
