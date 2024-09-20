@@ -125,7 +125,7 @@
                                     class="text-yellow-400" />
                             </svg>
                             <a href="#" target="_blank" class="text-slate-100 transition hover:opacity-75">
-                                Jl. Kridasana No.132 Kelurahan Pasiran, Singkawang Barat </a>
+                                Jl. Kridasana No. 132, Pasiran, Kec. Singkawang Barat, Kota Singkawang </a>
                         </li>
 
                         <li class="flex items-center gap-x-4">

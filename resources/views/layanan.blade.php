@@ -137,46 +137,40 @@
                 <div
                     class="mt-8 mb-8 grid grid-cols-1 gap-14 md:grid-cols-4 md:grid-rows-1 lg:gap-y-20 lg:gap-x-36 lg:my-0">
                     <div class="space-y-2">
-                        <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="5">0</h1>
-                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Kantor Cabang</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="20">0</h1>
-                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Paket Wisata</p>
-                    </div>
-                    <div class="space-y-2">
                         <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="4">0</h1>
-                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Tahun beroperasi</p>
+                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Tahun Beroperasi</p>
                     </div>
                     <div class="space-y-2">
-                        <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="100" x>0</h1>
-                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Total Pelanggan</p>
+                        <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="12">0</h1>
+                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Penghargaan diraih</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="115">0</h1>
+                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Jenis Menu</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h1 class="text-6xl text-yellow-400 font-semibold counter" data-target="7" x>0</h1>
+                        <p class="text-gray-900 uppercase font-semibold whitespace-nowrap">Cabang Catering</p>
                     </div>
                 </div>
             </div>
     </section>
     {{-- End Section I --}}
 
-    <section class="relative bg-[url('img/danau.jpg')] bg-cover bg-center bg-fixed lg:h-auto">
+    <section class="relative bg-catering2 bg-cover bg-center bg-fixed lg:h-auto">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 flex items-center justify-center h-full lg:h-auto">
-            <div class="text-center max-w-7xl px-4 lg:px-8 lg:py-16">
-                <div class="mt-8 mb-8 grid grid-cols-1 gap-14 lg:grid-cols-4 lg:grid-rows-1 lg:gap-20">
-                    <div class="space-y-2">
-                        <h1 class="text-6xl text-cyan-500 font-semibold counter" data-target="5"></h1>
-                        <p class="text-slate-100 uppercase font-semibold whitespace-nowrap">Kantor Cabang</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h1 class="text-6xl text-cyan-500 font-semibold counter" data-target="20">0</h1>
-                        <p class="text-slate-100 uppercase font-semibold whitespace-nowrap">Paket Wisata</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h1 class="text-6xl text-cyan-500 font-semibold counter" data-target="4">0</h1>
-                        <p class="text-slate-100 uppercase font-semibold whitespace-nowrap">Tahun beroperasi</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h1 class="text-6xl text-cyan-500 font-semibold counter" data-target="100" x>0</h1>
-                        <p class="text-slate-100 uppercase font-semibold whitespace-nowrap">Total Pelanggan</p>
+            <div
+                class="text-center max-w-7xl px-14 w-full bg-black bg-opacity-80 mt-24 py-10 font-poppins space-y-3 lg:px-8 lg:py-16">
+                <h2 class="-mb-4 text-3xl font-euphoria text-yellow-400">Acara</h2>
+                <h1 class="font-semibold uppercase text-slate-100 text-3xl">Catering</h1>
+                <div class="text-lg space-y-3">
+                    <div class="text-slate-100">Nikmati hidangan lezat untuk setiap acara spesial Anda dengan layanan
+                        catering
+                        profesional,
+                        berkualitas, dan beragam menu.</div>
+                    <div>
+                        <a href="/kontak" class="text-yellow-400 underline font-semibold">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
