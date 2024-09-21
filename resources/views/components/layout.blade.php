@@ -9,6 +9,10 @@
 
     @yield('page')
 
+    {{-- Start Whatsapp Fixed --}}
+    <x-whatsapp></x-whatsapp>
+    {{-- End Whatsapp Fixed --}}
+
     {{-- Start Footer --}}
     <x-footer :activePage="$activePage"></x-footer>
     {{-- End Footer --}}
