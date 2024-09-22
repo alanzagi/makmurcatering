@@ -1,31 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\PageController;
 
-Route::get('/', function () {
-    return view('index', [
-        'activePage' => 'beranda',
-        'title' => 'Beranda - Makmur Catering'
-    ]);
-})->name('beranda');
-
-Route::get('/layanan', function () {
-    return view('layanan', [
-        'activePage' => 'layanan',
-        'title' => 'Layanan - Makmur Catering'
-    ]);
-})->name('layanan');
-
-Route::get('/pemesanan', function () {
-    return view('pemesanan', [
-        'activePage' => 'pemesanan',
-        'title' => 'Pemesanan - Makmur Catering'
-    ]);
-})->name('pemesanan');
-
-Route::get('/kontak', function () {
-    return view('kontak', [
-        'activePage' => 'kontak',
-        'title' => 'Kontak'
-    ]);
-})->name('kontak');
+Route::get('/', [PageController::class, 'index'])->name('beranda');
+Route::get('/layanan', [PageController::class, 'layanan'])->name('layanan');
+Route::get('/pemesanan', [PemesananController::class, 'index'])->name('pemesanan');
+Route::get('/pemesanan/{id}', [PemesananController::class, 'show'])->name('menu.show');
+Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');

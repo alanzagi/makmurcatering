@@ -5,7 +5,7 @@
                     mr-1 mb-5 lg:mr-5 lg:mb-5 xl:mr-10 xl:mb-10">
         <div class="p-3 rounded-full flex items-center gap-x-2 bg-[#25D366]">
             <p class="text-md capitalize">Chat Whatsapp</p>
-            <img src="images/whatsapp.png" alt="" class="w-6 h-6 rounded-full">
+            <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" class="w-6 h-6 rounded-full">
         </div>
     </button>
 </div>
