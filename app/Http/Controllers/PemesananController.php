@@ -3,36 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\MenuItem;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 
 class PemesananController extends Controller
 {
-    public function index()
+    protected function viewData($title, $activePage, $menuItems = null)
     {
-        // Mengambil data dari tabel menu_items
-        $menuItems = DB::table('menu_items')->get();
-
-        // Mengirim data ke view
-        return view('pemesanan', [
+        return [
+            'activePage' => $activePage,
+            'title' => $title,
             'menuItems' => $menuItems,
-            'activePage' => 'pemesanan',
-            'title' => 'Pemesanan - Makmur Catering'
-        ]);
+        ];
     }
 
-
-    public function show($id)
+    public function index()
     {
-        // Mengambil data berdasarkan ID
-        $menuItem = DB::table('menu_items')->where('id', $id)->firstOrFail();
+        // Mengambil semua data dari model MenuItem
+        $menuItems = MenuItem::all();
+
+        // Mengirim data ke view
+        return view('pemesanan', $this->viewData('Pemesanan - Makmur Catering', 'pemesanan', $menuItems));
+    }
+
+    public function show($slug)
+    {
+        // Mengambil data berdasarkan slug menggunakan model
+        $menuItem = MenuItem::where('slug', $slug)->firstOrFail();
 
         // Mengirim data ke view detail
         return view('detail', [
-            'menuItem' => $menuItem,
             'activePage' => 'pemesanan',
-            'title' => 'Detail Menu - Makmur Catering'
+            'title' => 'Detail Menu - Makmur Catering',
+            'menuItem' => $menuItem,
         ]);
     }
 }

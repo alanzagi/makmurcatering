@@ -72,9 +72,10 @@
                                     class="w-full h-auto">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                    <a href="{{ route('menu.show', $item->id) }}"
+                                    <a href="{{ route('menu.show', $item->slug) }}"
                                         class="px-4 py-2 font-semibold text-slate-100 ring-1 ring-yellow-400 bg-transparent rounded hover:bg-yellow-400 duration-300">Lihat
                                         Detail</a>
+
                                 </div>
                             </div>
                             <div class="mt-3">
