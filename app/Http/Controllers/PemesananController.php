@@ -29,11 +29,15 @@ class PemesananController extends Controller
         // Mengambil data berdasarkan slug menggunakan model
         $menuItem = MenuItem::where('slug', $slug)->firstOrFail();
 
+        // Mengambil semua menu items, kecuali yang sedang ditampilkan
+        $menuItems = MenuItem::where('id', '!=', $menuItem->id)->get();
+
         // Mengirim data ke view detail
         return view('detail', [
             'activePage' => 'pemesanan',
             'title' => 'Detail Menu - Makmur Catering',
             'menuItem' => $menuItem,
+            'menuItems' => $menuItems, // pastikan ini ada
         ]);
     }
 }

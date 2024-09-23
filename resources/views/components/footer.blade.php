@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4">
             <div>
                 <div class="text-yellow-400 font-poppins flex items-center gap-x-4">
-                    <img src="images/alanxcode.png" alt="" class="h-20 rounded-full" />
+                    <img src="{{ asset('images/' . 'alanxcode.png') }}" alt="" class="h-20 rounded-full" />
                     <h1 class="font-semibold text-3xl">Makmur Catering</h1>
                 </div>
                 <p class="mt-4 max-w-xs text-slate-100">Hidangan berkualitas tinggi dengan pelayanan profesional,

@@ -17,7 +17,7 @@
             </div>
         </header>
 
-        <main class="bg-slate-100 px-4 pt-12 font-poppins">
+        <main class="bg-slate-100 px-4 py-12 font-poppins">
             <div class="w-full h-[24em] flex items-center justify-center">
                 <img src="{{ asset('images/' . $menuItem->photo) }}" alt="{{ $menuItem->name }}"
                     class="w-full h-full object-cover">
@@ -77,7 +77,7 @@
                 </form>
             </div>
 
-            <div class="w-full p-4 border border-gray-900/50 mt-4">
+            <div class="w-full p-4 border border-gray-900/50 mt-4 pb-8">
                 <h1 class="font-bold uppercase text-xl">{{ $menuItem->name }}</h1>
                 <p>{{ $menuItem->description }}</p>
 
@@ -101,25 +101,31 @@
             </div>
 
             <div class="mt-4 border border-gray-900/50">
-                <div class="w-full p-4 text-lg font-semibold border border-gray-900/50">
+                <div class="w-full p-4 text-lg font-semibold border-b border-gray-900/50">
                     Menu Lainnya
                 </div>
 
-                <div class="p-4 flex items-center gap-x-2">
-                    <div class="h-20 w-20">
-                        <img src="{{ asset('images/' . $menuItem->photo) }}" alt="">
-                    </div>
+                @foreach ($menuItems as $menuItem)
+                    <div class="p-4 flex items-center gap-x-2">
+                        <div class="h-20 w-20">
+                            <a href="{{ route('menu.show', $menuItem->slug) }}"
+                                class="hover:text-yellow-400 transition duration-400">
+                                <img src="{{ asset('images/' . $menuItem->photo) }}" alt="{{ $menuItem->name }}">
+                            </a>
+                        </div>
 
-                    <div>
-                        <h1>{{ $menuItem->name }}</h1>
-                        <div class="flex items-center gap-x-2">
-                            <p class="font-bold text-md text-gray-900">
-                                Rp{{ number_format($menuItem->price, 0, ',', '.') }},-</p>
-                            <p class="line-through text-sm text-gray-900/50">
-                                Rp{{ number_format($menuItem->price * 1.2, 0, ',', '.') }},0</p>
+                        <div>
+                            <a href="{{ route('menu.show', $menuItem->slug) }}"
+                                class="hover:text-yellow-400 transition duration-400">{{ $menuItem->name }}</a>
+                            <div class="flex items-center gap-x-2">
+                                <p class="font-bold text-md text-gray-900">
+                                    Rp{{ number_format($menuItem->price, 0, ',', '.') }},-</p>
+                                <p class="line-through text-sm text-gray-900/50">
+                                    Rp{{ number_format($menuItem->price * 1.2, 0, ',', '.') }},0</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </main>
     @endsection

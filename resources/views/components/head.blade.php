@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
-    <link rel="shortcut icon" href="images/alanxcode.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/' . 'alanxcode.png') }}" type="image/x-icon">
     {{-- Tailwind CSS --}}
     @vite('resources/css/app.css')
     <!-- Playfair Display Google Fonts -->
