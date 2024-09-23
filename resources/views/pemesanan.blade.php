@@ -1,9 +1,6 @@
 <x-layout :title="$title" :activePage="$activePage">
     @section('page')
-        {{-- Start header sebagai background navbar --}}
-        <header class="bg-slate-600 text-center pb-[4.5em] md:pb-[4.75em]">
-        </header>
-        {{-- Start header sebagai background navbar --}}
+        <x-header></x-header>
 
         <main class="bg-black">
             <div id="animation-carousel" class="relative w-full" data-carousel="static">
