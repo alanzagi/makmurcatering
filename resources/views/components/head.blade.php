@@ -26,6 +26,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
+    {{-- SweetAlert2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
@@ -34,6 +36,12 @@
         @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap");
 
+        .btn-red {
+            background-color: #e3342f !important;
+            /* Warna merah */
+            color: white !important;
+            /* Teks putih */
+        }
 
         .font-playfair {
             font-family: "Playfair Display", serif;

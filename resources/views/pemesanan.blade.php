@@ -80,7 +80,8 @@
                                 <div class="flex items-center gap-x-2">
                                     <h1 class="text-xl font-medium text-yellow-400">Rp
                                         {{ number_format($item->price, 0, ',', '.') }}</h1>
-                                    <h2 class="text-sm line-through">Rp30.000,-</h2>
+                                    <h2 class="text-sm line-through">
+                                        Rp{{ number_format($item->price * 1.2, 0, ',', '.') }}</h2>
                                 </div>
                             </div>
                         </div>
