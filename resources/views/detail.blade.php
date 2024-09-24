@@ -98,28 +98,23 @@
                     </div>
                 </div>
 
-                <div class="w-full p-4 border border-gray-900/50 mt-4 pb-8 lg:pt-4 lg:-mt-[0.01em]">
+                <div class="w-full p-4 border border-gray-900/50 mt-4 pb-8 lg:pt-4 lg:-mt-[0em]">
                     <h1 class="font-bold uppercase text-xl">{{ $menuItem->name }}</h1>
                     <p>{{ $menuItem->description }}</p>
 
                     <ul class="space-y-1 pt-4">
                         <li class="p-2 border-b border-gray-900/50">
-                            <span class="text-base font-bold">Nomor Menu</span>
-                            :
-                            {{ $menuItem->menu_number }}
+                            <span class="text-base font-bold">Nomor Menu</span> : {{ $menuItem->menu_number }}
                         </li>
                         <li class="p-2 border-b border-gray-900/50">
-                            <span class="text-base font-bold">Jenis Menu</span>
-                            :
-                            {{ $menuItem->type }}
+                            <span class="text-base font-bold">Jenis Menu</span> : {{ $menuItem->type }}
                         </li>
                         <li class="p-2 border-b border-gray-900/50">
-                            <span class="text-base font-bold">Ketersediaan Menu</span>
-                            :
-                            {{ $menuItem->stock }}
+                            <span class="text-base font-bold">Ketersediaan Menu</span> : {{ $menuItem->stock }}
                         </li>
                     </ul>
                 </div>
+
             </div>
 
 
@@ -139,12 +134,15 @@
 
                         <div>
                             <a href="{{ route('menu.show', $menuItem->slug) }}"
-                                class="hover:text-yellow-400 transition duration-400">{{ $menuItem->name }}</a>
+                                class="hover:text-yellow-400 transition duration-400">
+                                {{ $menuItem->name }}
+                            </a>
                             <div class="flex items-center gap-x-2">
                                 <p class="font-bold text-md text-gray-900">
                                     Rp{{ number_format($menuItem->price, 0, ',', '.') }},-</p>
                                 <p class="line-through text-sm text-gray-900/50">
-                                    Rp{{ number_format($menuItem->price * 1.2, 0, ',', '.') }},0</p>
+                                    Rp{{ number_format($menuItem->price * 1.2, 0, ',', '.') }},-
+                                </p>
                             </div>
                         </div>
                     </div>

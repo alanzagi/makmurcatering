@@ -31,7 +31,7 @@ class MenuItemsTableSeeder extends Seeder
             'photo' => 'cateringayam1.jpg',
             'menu_number' => '3',
             'type' => 'Minuman',
-            'stock' => 10,
+            'stock' => 0,
             'slug' => Str::slug('Es Teh Manis'),
         ]);
 
@@ -42,7 +42,7 @@ class MenuItemsTableSeeder extends Seeder
             'photo' => 'cateringayam1.jpg',
             'menu_number' => '4',
             'type' => 'Makanan',
-            'stock' => 3,
+            'stock' => 0,
             'slug' => Str::slug('Soto Ayam'),
         ]);
     }
