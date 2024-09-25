@@ -50,12 +50,13 @@
                             </li>
                         </ul>
 
-                        <form action="" class="mt-4">
-                            <div x-data="{ count: 1, isMinusClicked: false, isPlusClicked: false, maxStock: {{ $menuItem->stock }} }" class="flex items-center">
+                        <form action="" method="POST" class="mt-4">
+                            @csrf
+                            <div x-data="{ count: 0, isClicked: '', maxStock: {{ $menuItem->stock }} }" class="flex items-center">
                                 <!-- Tombol Kurang -->
                                 <button type="button"
-                                    @click="count > 0 ? count-- : count; isMinusClicked = true; isPlusClicked = false; setTimeout(() => isMinusClicked = false, 300)"
-                                    :class="isMinusClicked ? 'bg-red-500 text-white' : 'text-gray-900'"
+                                    @click="if (count > 0) { count--; isClicked = 'minus'; setTimeout(() => isClicked = '', 300); }"
+                                    :class="isClicked === 'minus' ? 'bg-red-500 text-white' : 'text-gray-900'"
                                     class="px-4 py-2 rounded-l border border-gray-900/50 transition-colors duration-300">
                                     -
                                 </button>
@@ -67,34 +68,32 @@
                                 <!-- Tombol Tambah -->
                                 <button type="button"
                                     @click="
-                                if (count < maxStock) {
-                                    count++;
-                                    isPlusClicked = true;
-                                    isMinusClicked = false;
-                                    setTimeout(() => isPlusClicked = false, 300);
-                                } else {
-                                    Swal.fire({
-                                        icon: 'warning',
-                                        title: 'Stok Habis!',
-                                        text: 'Jumlah pesanan sudah mencapai stok maksimal',
-                                        confirmButtonText: 'OK',
-                                        customClass: {
-                                            confirmButton: 'btn-red'  // Tambahkan kelas kustom untuk tombol
-                                        }
-                                    });
-                                }
-                            "
-                                    :class="isPlusClicked ? 'bg-green-500 text-white' : 'text-gray-900'"
+                                    if (count < maxStock) {
+                                        count++;
+                                        isClicked = 'plus';
+                                        setTimeout(() => isClicked = '', 300);
+                                    } else {
+                                        Swal.fire({
+                                            icon: 'warning',
+                                            title: 'Stok Habis!',
+                                            text: 'Jumlah pesanan sudah mencapai stok maksimal',
+                                            confirmButtonText: 'OK',
+                                            customClass: { confirmButton: 'btn-red' }
+                                        });
+                                    }"
+                                    :class="isClicked === 'plus' ? 'bg-green-500 text-white' : 'text-gray-900'"
                                     class="px-4 py-2 rounded-r border border-gray-900/50 transition-colors duration-300">
                                     +
                                 </button>
                             </div>
 
-                            <button
-                                class="w-full py-4 mt-2 bg-yellow-400 rounded-md font-bold text-sm text-slate-100 uppercase border border-yellow-400 transition duration-900 hover:bg-slate-100 hover:text-yellow-400">Pesan
-                                Menu
-                                Ini</button>
+                            <!-- Tombol submit -->
+                            <button type="submit"
+                                class="w-full py-4 mt-2 bg-yellow-400 rounded-md font-bold text-sm text-slate-100 uppercase border border-yellow-400 transition duration-900 hover:bg-slate-100 hover:text-yellow-400">
+                                Pesan Menu Ini
+                            </button>
                         </form>
+
                     </div>
                 </div>
 
