@@ -50,8 +50,10 @@
                             </li>
                         </ul>
 
-                        <form action="" method="POST" class="mt-4">
+                        <form action="{{ route('pemesanan.kirim') }}" method="POST" class="mt-4">
                             @csrf
+                            <input type="hidden" name="slug" value="{{ $menuItem->slug }}">
+                            <!-- Menambahkan input tersembunyi untuk slug -->
                             <div x-data="{ count: 0, isClicked: '', maxStock: {{ $menuItem->stock }} }" class="flex items-center">
                                 <!-- Tombol Kurang -->
                                 <button type="button"
@@ -62,7 +64,7 @@
                                 </button>
 
                                 <!-- Input untuk menampilkan jumlah -->
-                                <input type="text" x-model="count" readonly
+                                <input type="text" name="count" x-model="count" readonly
                                     class="w-full text-center border border-gray-300 py-2" />
 
                                 <!-- Tombol Tambah -->

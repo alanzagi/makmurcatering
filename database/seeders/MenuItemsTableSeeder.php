@@ -42,7 +42,7 @@ class MenuItemsTableSeeder extends Seeder
             'photo' => 'cateringayam1.jpg',
             'menu_number' => '4',
             'type' => 'Makanan',
-            'stock' => 0,
+            'stock' => 12,
             'slug' => Str::slug('Soto Ayam'),
         ]);
     }

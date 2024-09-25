@@ -70,24 +70,34 @@
                     </div>
                 </div>
 
+                @php
+                    $menuItem = session('menu_item');
+                    $count = session('count');
+                @endphp
+
                 <div class="pb-4">
                     <h1 class="font-semibold text-xl">Detail Pesanan:</h1>
                     <ul class="my-4 text-sm space-y-4">
-                        <li class="flex flex-col gap-y-4">
-                            <span>Jumlah Pembelian</span>
-                            <span>123</span>
-                            <hr class="border border-gray-900/50 w-full">
-                        </li>
-                        <li class="flex flex-col gap-y-4">
-                            <span>Harga Pembelian</span>
-                            <span>123</span>
-                            <hr class="border border-gray-900/50 w-full">
-                        </li>
-                        <li class="flex flex-col gap-y-4">
-                            <span>Total Harga Pembelian</span>
-                            <span>123</span>
-                            <hr class="border border-gray-900/50 w-full">
-                        </li>
+                        @if ($menuItem && $count)
+                            <li class="flex flex-col gap-y-4">
+                                <span>Jumlah Pembelian</span>
+                                <span>{{ $count }} Porsi {{ $menuItem->name }}</span>
+                                <hr class="border border-gray-900/50 w-full">
+                            </li>
+                            <li class="flex flex-col gap-y-4">
+                                <span>Harga Pembelian</span>
+                                <span>Rp{{ number_format($menuItem->price, 0, ',', '.') }},- Per Porsi</span>
+                                <hr class="border border-gray-900/50 w-full">
+                            </li>
+                            <li class="flex flex-col gap-y-4">
+                                <span>Total Harga Pembelian</span>
+                                <span
+                                    class="text-xl font-bold">Rp{{ number_format($menuItem->price * $count, 0, ',', '.') }},-</span>
+                                <hr class="border border-gray-900/50 w-full">
+                            </li>
+                        @else
+                            <p>Tidak ada data pemesanan yang ditemukan.</p>
+                        @endif
                     </ul>
 
                     <h1 class="font-semibold text-xl mb-4">Keterangan Tambahan:</h1>
