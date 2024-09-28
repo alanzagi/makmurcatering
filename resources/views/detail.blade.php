@@ -129,7 +129,8 @@
                         <div class="h-20 w-20">
                             <a href="{{ route('menu.show', $menuItem->slug) }}"
                                 class="hover:text-yellow-400 transition duration-400">
-                                <img src="{{ asset('images/' . $menuItem->photo) }}" alt="{{ $menuItem->name }}">
+                                <img src="{{ asset('images/' . $menuItem->photo) }}" alt="{{ $menuItem->name }}"
+                                    class="h-20 w-20">
                             </a>
                         </div>
 

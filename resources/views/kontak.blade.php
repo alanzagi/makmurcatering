@@ -1,7 +1,7 @@
 <x-layout :title="$title" :activePage="$activePage">
     @section('page')
         <x-header></x-header>
-        <section class="bg-white font-cabin lg:px-20">
+        <section class="bg-slate-100 font-cabin lg:px-20">
             <div class="w-full py-20">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3374801675477!2d108.98420807403576!3d0.8895406628844599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31e3739a25f1bc61%3A0xf17e632b61b7a097!2sSMK%20Negeri%203%20Singkawang!5e0!3m2!1sid!2sid!4v1726063858187!5m2!1sid!2sid"
@@ -9,8 +9,8 @@
                     referrerpolicy="no-referrer-when-downgrade" class="w-full">
                     ></iframe>
 
-                <div class="grid  md:pt-20">
-                    <div class="bg-slate-100">
+                <div class="grid md:pt-20">
+                    <div class="bg-white rounded-lg md:px-10">
                         <div class="py-10 px-4 space-y-4">
                             <h1 class="text-3xl font-playfair">Informasi Kontak</h1>
                             <p class="text-md">Hubungi kami untuk pemesanan catering, informasi
@@ -27,7 +27,8 @@
                                 </svg>
                                 <h2 class="text-xl">Email</h2>
                             </div>
-                            <a href="mailto:alanzagi2007@gmail.com" class="text-md">alanzagi2007@gmail.com</a>
+                            <a href="mailto:alanzagi2007@gmail.com" target="_blank"
+                                class="text-md">alanzagi2007@gmail.com</a>
                         </div>
 
                         <div class="px-4 pb-6">
@@ -55,8 +56,9 @@
 
                                 <h2 class="text-xl">Alamat</h2>
                             </div>
-                            <a href="mailto:alanzagi2007@gmail.com" class="text-md">Jl. Kridasana No.132 Kelurahan Pasiran,
-                                Singkawang Barat</a>
+                            <a href="mailto:alanzagi2007@gmail.com" target="_blank" class="text-md">Jl. Kridasana No.132
+                                Kelurahan Pasiran,
+                                Kota Singkawang</a>
                         </div>
                     </div>
                 </div>

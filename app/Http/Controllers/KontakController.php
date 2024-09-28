@@ -10,7 +10,7 @@ class KontakController extends Controller
     {
         return view('kontak', [
             'activePage' => 'kontak',
-            'title' => 'Kontak'
+            'title' => 'Kontak - Makmur Catering'
         ]);
     }
 }

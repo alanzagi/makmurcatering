@@ -2,13 +2,28 @@
     @section('page')
         <x-header></x-header>
 
+        <header class="font-poppins">
+            <div class="py-6">
+                <div class="pl-4 text-sm font-medium flex items-start gap-x-1">
+                    <a href="/pemesanan" class="text-gray-900 hover:text-yellow-400 transition duration-400">Pemesanan</a>
+                    <span class="opacity-50">
+                        /
+                    </span>
+                    <a href="/toko/struk" class="text-gray-900 hover:text-yellow-400 transition duration-400">Pembayaran
+                    </a>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold pl-4 text-gray-700">Pembayaran</h1>
+                </div>
+            </div>
+        </header>
 
         <main class="font-poppins py-10 bg-slate-100 max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
             <div class="sm:w-11/12 lg:w-3/4 mx-auto">
                 <!-- Card -->
                 <form id="whatsapp-form" action="https://wa.me/6281521550913?text=" method="get" target="_blank"
                     onsubmit="return prepareWhatsAppMessage()">
-                    <div class="flex flex-col p-4 sm:p-10 bg-white shadow-md rounded-xl">
+                    <div class="flex flex-col p-8 sm:p-10 bg-white shadow-md rounded-xl">
                         <!-- Header -->
                         <div class="flex justify-between">
                             <h1 class="mt-2 text-lg md:text-xl font-bold text-yellow-400">Makmur Catering</h1>
@@ -202,14 +217,15 @@
                             `*Rincian Pembayaran:*\n` +
                             `- Barang: ${menuItemName}\n` +
                             `- Jumlah Barang: ${count}\n` +
-                            `- Subtotal: Rp${formattedSubtotal},-\n` +
-                            `- Ongkir: Rp${formattedOngkir},-\n` +
-                            `*Jumlah Total Pembayaran: Rp${formattedTotal},-*\n\n` +
+                            `- Subtotal: ${formattedSubtotal},-\n` +
+                            `- Ongkir: ${formattedOngkir},-\n` +
+                            `*Jumlah Total Pembayaran: ${formattedTotal},-*\n\n` +
                             `*Tanggal Pembayaran:* ${today}\n` +
                             `*Jatuh Tempo Pembayaran:* ${tomorrow}\n\n` +
                             companyName +
                             catatanMessage + // Add notes if available
-                            `Terima Kasih!`;
+                            `\nTerima Kasih!`;
+
 
                         // Set message in hidden input
                         document.getElementById('whatsapp-message').value = message;

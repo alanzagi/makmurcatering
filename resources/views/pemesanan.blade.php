@@ -64,9 +64,9 @@
                 @else
                     @foreach ($menuItems as $item)
                         <div>
-                            <div class="relative group">
+                            <div class="relative h-[20em]">
                                 <img src="{{ asset('images/' . $item->photo) }}" alt="{{ $item->name }}"
-                                    class="w-full h-auto">
+                                    class="w-full h-[20em]">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
                                     <a href="{{ route('menu.show', $item->slug) }}"
@@ -142,11 +142,11 @@
             <hr class="h-[2px] mb-6 border border-gray-900">
 
             <div class="grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-0">
-                <div class="bg-green-500">
-                    <img src="" alt="" class="w-full h-[12em] rounded-lg">
+                <div class="bg-gray-900 rounded-lg shadow-b-md shadow-gray-900">
+                    <img src="{{ asset('images/ayambakarthumbnail.jpg') }}" alt="Ayam Bakar" class="w-full h-[12em]">
                 </div>
-                <div class="bg-green-500">
-                    <img src="" alt="" class="w-full h-[12em] rounded-lg">
+                <div class="bg-gray-900 rounded-lg shadow-b-md shadow-gray-900">
+                    <img src="{{ asset('images/ayamgorengthumbnail.jpg') }}" alt="Ayam Goreng" class="w-full h-[12em]">
                 </div>
             </div>
         </section>

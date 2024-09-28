@@ -14,36 +14,36 @@ class MenuItemsTableSeeder extends Seeder
         DB::table('menu_items')->truncate();
 
         MenuItem::create([
-            'name' => 'Ayam Bakar',
+            'name' => 'Paket Ayam Bakar',
             'price' => 25000,
-            'description' => 'Ayam bakar dengan bumbu rempah khas, disajikan dengan nasi putih hangat dan sambal terasi.',
+            'description' => 'Sudah termasuk dengan: Nasi; Lalapan; Sambal Tempe; Sepotong Dada Ayam; Capcay Kuah; Satu Buah Pisang; Satu Mineral Gelas; Permen; Sendok; Tisu; dan Tusuk Gigi.',
+            'photo' => 'cateringayambakar.jpg',
+            'menu_number' => '1',
+            'type' => 'Makanan',
+            'stock' => 5,
+            'slug' => Str::slug('Paket Ayam Bakar'),
+        ]);
+
+        MenuItem::create([
+            'name' => 'Paket Ayam Goreng',
+            'price' => 20000,
+            'description' => 'Sudah termasuk dengan: Nasi; Lalapan; Sambal Tempe; Sepotong Dada Ayam; Capcay Kuah; Satu Buah Pisang; Satu Mineral Gelas; Permen; Sendok; Tisu; dan Tusuk Gigi.',
             'photo' => 'cateringayam1.jpg',
             'menu_number' => '2',
             'type' => 'Makanan',
-            'stock' => 5,
-            'slug' => Str::slug('Ayam Bakar'),
+            'stock' => 10,
+            'slug' => Str::slug('Paket Ayam Goreng'),
         ]);
 
         MenuItem::create([
-            'name' => 'Es Teh Manis',
-            'price' => 5000,
-            'description' => 'Es teh manis segar, cocok untuk menemani makanan berat Anda.',
-            'photo' => 'cateringayam1.jpg',
-            'menu_number' => '3',
-            'type' => 'Minuman',
-            'stock' => 0,
-            'slug' => Str::slug('Es Teh Manis'),
-        ]);
-
-        MenuItem::create([
-            'name' => 'Soto Ayam',
+            'name' => 'Paket Ayam Gulai',
             'price' => 22000,
-            'description' => 'Soto ayam dengan kuah bening, lengkap dengan suun, telur, dan potongan ayam suwir.',
-            'photo' => 'cateringayam1.jpg',
-            'menu_number' => '4',
+            'description' => 'Sudah termasuk dengan: Nasi; Lalapan; Sambal Tempe; Sepotong Dada Ayam; Capcay Kuah; Satu Buah Pisang; Satu Mineral Gelas; Permen; Sendok; Tisu; dan Tusuk Gigi.',
+            'photo' => 'cateringayamgulai.jpg',
+            'menu_number' => '3',
             'type' => 'Makanan',
             'stock' => 12,
-            'slug' => Str::slug('Soto Ayam'),
+            'slug' => Str::slug('Paket Ayam Gulai'),
         ]);
     }
 }
