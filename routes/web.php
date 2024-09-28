@@ -16,3 +16,4 @@ Route::get('/pemesanan/{slug}', [PemesananController::class, 'show'])->name('men
 Route::post('/pemesanan/kirim', [PemesananController::class, 'kirim'])->name('pemesanan.kirim');
 Route::get('/toko/pengiriman', [PemesananController::class, 'pengiriman'])->name('pengiriman');
 Route::get('/toko', [PemesananController::class, 'redirectToPemesanan'])->name('toko.redirect');
+Route::match(['get', 'post'], '/toko/struk', [PemesananController::class, 'showStruk'])->name('struk');

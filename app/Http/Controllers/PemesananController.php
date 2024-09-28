@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\MenuItem;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cache;
@@ -54,8 +55,10 @@ class PemesananController extends Controller
         $menuItem = MenuItem::where('slug', $slug)->firstOrFail();
 
         // Mengambil menu items lain kecuali yang sedang ditampilkan
-        $menuItems = Cache::remember('menuItems_except_' . $menuItem->id, 60 * 60, function () {
-            return MenuItem::select('name', 'slug', 'price', 'photo')->get();
+        $menuItems = Cache::remember('menuItems_except_' . $menuItem->id, 60 * 60, function () use ($menuItem) {
+            return MenuItem::where('id', '!=', $menuItem->id)
+                ->select('name', 'slug', 'price', 'photo')
+                ->get();
         });
 
         // Mengirim data ke view detail
@@ -66,6 +69,7 @@ class PemesananController extends Controller
             $menuItem
         ));
     }
+
 
     /**
      * Menangani pengiriman data dari form pemesanan.
@@ -129,5 +133,40 @@ class PemesananController extends Controller
     {
         // Mengarahkan ke halaman pemesanan
         return redirect()->route('pemesanan');
+    }
+
+    public function showStruk(Request $request)
+    {
+        $today = Carbon::now()->format('d/m/Y'); // Format menjadi dd/mm/yyyy
+        $tomorrow = Carbon::now()->addDay()->format('d/m/Y'); // Tambah satu hari dan format
+
+        // Validasi data form
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'company' => 'nullable|string|max:255',
+            'address' => 'required|string|max:255',
+            'kelurahan' => 'required|string',
+            'number' => 'required|string|max:15',
+            'catatan' => 'nullable|string|max:1000', // Tambahan untuk catatan
+            'payment' => 'required|string',
+            'menuItem' => 'required|array', // Pastikan menuItem dikirim sebagai array
+            'count' => 'required|integer',  // Jumlah pesanan
+        ]);
+
+        // Ambil data menuItem dan count dari request
+        $menuItem = $request->input('menuItem');
+        $count = $request->input('count');
+
+        // Mengarahkan ke halaman struk dengan data yang sudah divalidasi
+        return view('struk', [
+            'orderData' => $validatedData,
+            'menuItem' => $menuItem,  // Data menu yang sudah diambil dari form
+            'count' => $count,        // Jumlah pembelian
+            'title' => 'Struk - Makmur Catering',
+            'activePage' => 'pemesanan',
+            'today' => $today,        // Kirimkan variabel today ke view
+            'tomorrow' => $tomorrow,  // Kirimkan variabel tomorrow ke view
+        ]);
     }
 }
