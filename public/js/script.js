@@ -41,3 +41,4 @@ document.addEventListener("DOMContentLoaded", function () {
     counters.forEach((counter) => observer.observe(counter));
 });
 // End Fungsi untuk penambahan angka
+

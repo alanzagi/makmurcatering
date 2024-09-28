@@ -149,16 +149,15 @@
                             <h2 class="text-2xl font-medium text-gray-900 font-playfair">Dapatkan Informasi
                                 Terbaru!</h2>
 
-                            <p class="mt-2 text-gray-500 font-poppins pr-8">Masukkan email anda di bawah untuk
+                            <p class="mt-2 text-gray-500 font-poppins pr-8">Masukkan nomor whatsapp anda di bawah untuk
                                 berlangganan informasi dan promosi terbaru seputar Makmur Catering.</p>
                         </div>
                         <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-                            <form class="w-full" name="database">
-                                <label for="email" class="sr-only"> Email </label>
+                            <form class="w-full" name="submit-to-google-sheet">
+                                <label for="email" class="sr-only"> Nomor </label>
 
                                 <div class="border border-yellow-100 p-2 sm:flex sm:items-center sm:gap-4">
-                                    <input type="email" id="email" name="email"
-                                        placeholder="email@domain.com"
+                                    <input type="tel" id="number" name="number" placeholder="08xx xxxx xxxx"
                                         class="w-full p-3 border-none rounded-md focus:border-transparent focus:ring-yellow-400 sm:text-sm"
                                         required />
                                     <button type="submit" id="submit"
@@ -176,8 +175,8 @@
                                             d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 ~0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                                     </svg>
                                     <span class="sr-only">Info</span>
-                                    <div><span class="font-medium">Berhasil!</span> Emailmu telah masuk dalam
-                                        daftar berlangganan informasi seputar Daris Travel.</div>
+                                    <div><span class="font-medium">Berhasil!</span> Nomormu telah masuk dalam
+                                        daftar berlangganan informasi seputar Makmur Catering.</div>
                                 </div>
                             </form>
                         </div>
@@ -187,5 +186,61 @@
         </div>
 
         <p class="text-sm text-slate-100 font-poppins">&copy; 2024. Makmur Catering. All rights reserved.</p>
+        <script>
+            const scriptURL =
+                "https://script.google.com/macros/s/AKfycbyEoqXt8Q_y60RYTTQ52rwOWSXOH8340oGaHOEtxV7MokuK0MrQmcrqry4c0T4gOeyF/exec";
+            const form = document.forms["submit-to-google-sheet"];
+            const button = document.getElementById("submit");
+            const successMessage = document.getElementById("success-message");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault(); // Mencegah form dari reload halaman default
+                handleSubmit(); // Panggil handleSubmit untuk mengubah status tombol dan mengirim data
+            });
+
+            function handleSubmit() {
+                // Ubah tombol menjadi status loading
+                button.innerHTML = `
+    <div class="flex items-center justify-center w-full">
+      <svg class="animate-spin h-5 w-5 border-white border-t-transparent border-2 rounded-full" viewBox="0 0 24 24"></svg>
+      <span class="ml-2 md:hidden">Loading...</span>
+    </div>`;
+                button.disabled = true;
+                button.classList.add("bg-yellow-400", "cursor-not-allowed");
+
+                // Kirim data ke Google Sheets
+                fetch(scriptURL, {
+                        method: "POST",
+                        body: new FormData(form)
+                    })
+                    .then((response) => {
+                        console.log("Success!", response);
+
+                        // Kembalikan tombol ke status normal
+                        button.innerHTML = "Kirim";
+                        button.disabled = false;
+                        button.classList.remove("bg-yellow-400", "cursor-not-allowed");
+                        button.classList.add("bg-yellow-500", "hover:bg-yellow-600");
+
+                        // Tampilkan pesan berhasil
+                        successMessage.classList.remove("hidden");
+                        successMessage.classList.add("flex")
+
+                        // Sembunyikan pesan berhasil setelah 3 detik
+                        setTimeout(() => {
+                            successMessage.classList.add("hidden");
+                        }, 3000); // 3 detik
+                    })
+                    .catch((error) => {
+                        console.error("Error!", error.message);
+
+                        // Kembalikan tombol ke status normal jika terjadi kesalahan
+                        button.innerHTML = "Kirim";
+                        button.disabled = false;
+                        button.classList.remove("bg-yellow-400", "cursor-not-allowed");
+                        button.classList.add("bg-yellow-500", "hover:bg-yellow-600");
+                    });
+            }
+        </script>
     </div>
 </footer>
