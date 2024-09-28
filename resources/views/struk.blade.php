@@ -6,7 +6,7 @@
         <main class="font-poppins py-10 bg-slate-100 max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
             <div class="sm:w-11/12 lg:w-3/4 mx-auto">
                 <!-- Card -->
-                <form id="whatsapp-form" action="https://wa.me/6281521550913" method="get" target="_blank"
+                <form id="whatsapp-form" action="https://wa.me/6281521550913?text=" method="get" target="_blank"
                     onsubmit="return prepareWhatsAppMessage()">
                     <div class="flex flex-col p-4 sm:p-10 bg-white shadow-md rounded-xl">
                         <!-- Header -->
@@ -26,14 +26,24 @@
                         <div class="mt-8 grid sm:grid-cols-2 gap-3">
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Atas Nama:</h3>
-                                <h3 class="text-lg font-semibold text-gray-800">{{ $orderData['name'] }}</h3>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    {{ $orderData['name'] }}
+                                    @if (!empty($orderData['company']))
+                                        - {{ $orderData['company'] }}
+                                    @endif
+                                </h3>
                                 <address class="mt-2 not-italic text-gray-500">
                                     {{ $orderData['address'] }}<br>
                                     Kelurahan {{ ucwords(str_replace('-', ' ', $orderData['kelurahan'])) }}, Kota
                                     Singkawang<br>
                                     Indonesia<br>
+                                    <span class="text-xs">
+                                        Alamat Email: {{ $orderData['email'] }} <br>
+                                        Nomor Whatsapp: {{ $orderData['number'] }}
+                                    </span>
                                 </address>
                             </div>
+
                             <div class="sm:text-end space-y-2">
                                 <div class="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-2">
                                     <dl class="grid sm:grid-cols-5 gap-x-3">
@@ -45,8 +55,9 @@
                                         <dd class="col-span-2 text-gray-500">{{ $tomorrow }}</dd>
                                     </dl>
                                     <dl class="grid sm:grid-cols-5 gap-x-3">
-                                        <dt class="col-span-3 font-semibold text-gray-800">Jatuh Tempo Pembayaran:</dt>
-                                        <dd class="col-span-2 text-gray-500">{{ $orderData['payment'] }}</dd>
+                                        <dt class="col-span-3 font-semibold text-gray-800">Metode Pembayaran:</dt>
+                                        <dd class="col-span-2 text-gray-500">
+                                            {{ ucwords(str_replace('-', ' ', $orderData['payment'])) }}</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -149,9 +160,13 @@
                 </form>
 
                 <script>
-                    function formatRupiah(amount) {
-                        // Fungsi untuk menambahkan titik pada pemisah ribuan
-                        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                    function formatRupiah(number) {
+                        const formatter = new Intl.NumberFormat('id-ID', {
+                            style: 'currency',
+                            currency: 'IDR',
+                            minimumFractionDigits: 0,
+                        });
+                        return formatter.format(number).replace(/IDR/, '').trim(); // Remove "IDR" and trim the string
                     }
 
                     function prepareWhatsAppMessage() {
@@ -163,20 +178,23 @@
                         const menuItemName = "{{ $menuItem['name'] }}";
                         const count = {{ $count }};
                         const price = {{ $menuItem['price'] }};
+                        const catatan = "{{ $orderData['catatan'] }}";
+                        const payment = "{{ ucwords(str_replace('-', ' ', $orderData['payment'])) }}";
                         const subtotal = price * count;
                         const ongkir = subtotal / 10;
                         const totalPembayaran = subtotal + ongkir;
+                        const company = "{{ $orderData['company'] }}";
 
-                        // Format rupiah untuk subtotal, ongkir, dan total pembayaran
+                        // Format rupiah for subtotal, ongkir, and total payment
                         const formattedSubtotal = formatRupiah(subtotal);
                         const formattedOngkir = formatRupiah(ongkir);
                         const formattedTotal = formatRupiah(totalPembayaran);
 
-                        // Ambil catatan tambahan
-                        const catatan = "{{ $orderData['catatan'] }}";
+                        // Get additional notes
                         const catatanMessage = catatan ? `*Catatan Tambahan:* ${catatan}\n` : '';
+                        const companyName = company ? `*Nama Perusahaan:* ${company}\n` : '';
 
-                        // Buat pesan WhatsApp
+                        // Create WhatsApp message
                         const message =
                             `*Makmur Catering*\n\n` +
                             `*Atas Nama:* ${name}\n` +
@@ -189,10 +207,11 @@
                             `*Jumlah Total Pembayaran: Rp${formattedTotal},-*\n\n` +
                             `*Tanggal Pembayaran:* ${today}\n` +
                             `*Jatuh Tempo Pembayaran:* ${tomorrow}\n\n` +
-                            catatanMessage + // Menambahkan catatan jika ada
+                            companyName +
+                            catatanMessage + // Add notes if available
                             `Terima Kasih!`;
 
-                        // Set pesan di input hidden
+                        // Set message in hidden input
                         document.getElementById('whatsapp-message').value = message;
                         return true;
                     }
