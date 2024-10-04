@@ -17,7 +17,7 @@
     <x-footer :activePage="$activePage"></x-footer>
     {{-- End Footer --}}
 
-    <x-endbody></x-endbody>
+    <x-end-body></x-end-body>
 </body>
 
 </html>

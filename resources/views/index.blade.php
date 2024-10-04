@@ -2,7 +2,7 @@
     @section('page')
         {{-- Start Main --}}
         <main class="h-screen bg-catering font-poppins flex items-center">
-            <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+            <div class="absolute inset-0 bg-black opacity-40 z-0 h-screen"></div>
             <div class="relative text-slate-100 z-10 flex flex-col items-start pl-4">
                 <h2 class="text-xl md:text-3xl">Selamat Datang Di</h2>
                 <h1 class="text-3xl font-semibold text-yellow-400 md:text-5xl">Makmur Catering</h1>
