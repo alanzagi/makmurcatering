@@ -61,7 +61,7 @@
 
                     <!-- Kelurahan -->
                     <div>
-                        <label for="kelurahan" class="block mb-2 text-sm font-medium text-gray-900">Pilih Kecamatan</label>
+                        <label for="kelurahan" class="block mb-2 text-sm font-medium text-gray-900">Pilih Kelurahan</label>
                         <select id="kelurahan" name="kelurahan"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full px-2.5 py-[1em]">
                             <option value="">Pilih Kelurahan</option>
