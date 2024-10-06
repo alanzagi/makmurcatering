@@ -4,7 +4,7 @@
     <title>{{ $title }}</title>
     <link rel="shortcut icon" href="{{ asset('images/' . 'alanxcode.png') }}" type="image/x-icon">
     {{-- Tailwind CSS --}}
-    @vite('resources/css/app.css')
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Playfair Display Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
